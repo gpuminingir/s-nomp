@@ -452,7 +452,7 @@ module.exports = function(logger, portalConfig, poolConfigs){
                             shareCount: 0
                         };
 						
-						coinStats.blocks.lastblock = this.getBlocks;
+						coinStats.blocks.lastblock = getBlocks;
 						
                         for(var j = replies[i + 10].length; j > 0; j--){
                             var jsonObj;
