@@ -451,8 +451,11 @@ module.exports = function(logger, portalConfig, poolConfigs){
                             maxRoundTime: 0,
                             shareCount: 0
                         };
-						
-						coinStats.blocks.lastblock = replies[i + 7][0];
+						var lastblock = replies[i + 7][0].split(':')[2];
+						var timeoflastblock = replies[i + 7][0].split(':')[4];
+						var seconds = new Date() / 1000;
+						coinStats.blocks.lastblock = lastblock;
+						coinStats.blocks.timesincelast = seconds-timeoflastblock;
 //						console.log(replies);
 						
                         for(var j = replies[i + 10].length; j > 0; j--){
