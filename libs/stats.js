@@ -452,7 +452,7 @@ module.exports = function(logger, portalConfig, poolConfigs){
                             shareCount: 0
                         };
 						
-						coinStats.blocks.list = replies[i + 7];
+						coinStats.blocks.lastblock = replies[i + 7][0];
 //						console.log(replies);
 						
                         for(var j = replies[i + 10].length; j > 0; j--){
