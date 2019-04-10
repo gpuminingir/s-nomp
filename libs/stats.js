@@ -452,8 +452,8 @@ module.exports = function(logger, portalConfig, poolConfigs){
                             shareCount: 0
                         };
 						var lastblock = parseInt(replies[i + 7][0].split(':')[2]);
-						var timeoflastblock = parseInt(replies[i + 7][0].split(':')[4]);
-						var tnow = new Date() / 1;
+						var timeoflastblock = Math.floor(replies[i + 7][0].split(':')[4]/1000);
+						var tnow = Math.floor(new Date().getTime()/1000.0);
 						coinStats.blocks.lastblock = lastblock;
 						coinStats.blocks.timesincelast = tnow-timeoflastblock;
 //						console.log(replies);						
