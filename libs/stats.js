@@ -451,11 +451,12 @@ module.exports = function(logger, portalConfig, poolConfigs){
                             maxRoundTime: 0,
                             shareCount: 0
                         };
-						var lastblock = replies[i + 7][0].split(':')[2];
-						var timeoflastblock = replies[i + 7][0].split(':')[4];
+						var lastblock = parseInt(replies[i + 7][0].split(':')[2]);
+						var timeoflastblock = parseInt(replies[i + 7][0].split(':')[4]);
 						var tnow = new Date() / 1;
-						coinStats.blocks.lastblock = parseInt(lastblock);
-						coinStats.blocks.timeoflastblock = timeoflastblock;						
+						coinStats.blocks.lastblock = lastblock;
+						coinStats.blocks.timesincelast = tnow-timeoflastblock;
+//						console.log(replies);						
                         for(var j = replies[i + 10].length; j > 0; j--){
                             var jsonObj;
                             try {
