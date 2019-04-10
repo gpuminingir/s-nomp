@@ -456,7 +456,7 @@ module.exports = function(logger, portalConfig, poolConfigs){
 						var tnow = Math.floor(new Date().getTime()/1000.0);
 						coinStats.blocks.lastblock = lastblock;
 						coinStats.blocks.timesincelast = tnow-timeoflastblock;
-//						console.log(replies);						
+//						console.log(replies);
                         for(var j = replies[i + 10].length; j > 0; j--){
                             var jsonObj;
                             try {
