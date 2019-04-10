@@ -434,7 +434,7 @@ module.exports = function(logger, portalConfig, poolConfigs){
                             blocks: {
                                 pending: replies[i + 3],
                                 confirmed: replies[i + 4],
-                                orphaned: replies[i + 5]
+                                orphaned: replies[i + 5],
                             },
                             /* show all pending blocks */
                             pending: {
@@ -452,8 +452,8 @@ module.exports = function(logger, portalConfig, poolConfigs){
                             shareCount: 0
                         };
 						
-//						coinStats.blocks.lastblock = _this.getBlocks;
-						console.log(replies);
+						coinStats.blocks.list = replies[i + 7];
+//						console.log(replies);
 						
                         for(var j = replies[i + 10].length; j > 0; j--){
                             var jsonObj;
