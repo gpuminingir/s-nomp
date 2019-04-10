@@ -434,8 +434,8 @@ module.exports = function(logger, portalConfig, poolConfigs){
                             /* block stat counts */
                             blocks: {
                                 pending: replies[i + 3],
-                                confirmed: replies[i + 4],
-                                orphaneda: replies[i + 5]
+                                confirmed: replies[i + 4][0],
+                                orphaned: replies[i + 5]
                             },
                             /* show all pending blocks */
                             pending: {
