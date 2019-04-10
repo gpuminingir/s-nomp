@@ -410,7 +410,6 @@ module.exports = function(logger, portalConfig, poolConfigs){
                                 marketStats = replies[i + 2] ? (JSON.parse(replies[i + 2].coinmarketcap)[0] || 0) : 0;
                             }
                         }
-
                         var coinStats = {
                             name: coinName,
                             symbol: poolConfigs[coinName].coin.symbol.toUpperCase(),
@@ -452,6 +451,9 @@ module.exports = function(logger, portalConfig, poolConfigs){
                             maxRoundTime: 0,
                             shareCount: 0
                         };
+						
+						coinStats.blocks.lastblock = 0;
+						
                         for(var j = replies[i + 10].length; j > 0; j--){
                             var jsonObj;
                             try {
@@ -601,11 +603,7 @@ module.exports = function(logger, portalConfig, poolConfigs){
                         hashrate: 0,
                         hashrateString: null
                     };
-                }
-                
-				
-				portalStats.algos[algo].lastblock += coinStats.lastblock;
-				
+                }	
 				
                 portalStats.algos[algo].hashrate += coinStats.hashrate;
                 portalStats.algos[algo].workers += Object.keys(coinStats.workers).length;
