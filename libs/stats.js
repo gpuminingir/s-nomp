@@ -434,7 +434,7 @@ module.exports = function(logger, portalConfig, poolConfigs){
                             /* block stat counts */
                             blocks: {
                                 pending: replies[i + 3],
-                                confirmed: replies[i + 4][0],
+                                confirmed: replies[i + 4],
                                 orphaned: replies[i + 5]
                             },
                             /* show all pending blocks */
@@ -602,6 +602,11 @@ module.exports = function(logger, portalConfig, poolConfigs){
                         hashrateString: null
                     };
                 }
+                
+				
+				portalStats.algos[algo].lastblock += coinStats.lastblock;
+				
+				
                 portalStats.algos[algo].hashrate += coinStats.hashrate;
                 portalStats.algos[algo].workers += Object.keys(coinStats.workers).length;
 
